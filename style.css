@@ -1,46 +1,60 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0f1115;
-  color: #f1f5f9;
+  background-color: #0f0f0f;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+}
+
+.logo-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  max-width: 100px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
 header {
   text-align: center;
+  margin-top: 4rem;
   margin-bottom: 3rem;
 }
 
 header h1 {
   font-size: 3rem;
-  color: #38bdf8;
-  margin-bottom: 0.5rem;
+  color: #ff0000;
+  margin: 0;
 }
 
 header p {
-  color: #cbd5e1;
+  color: #cccccc;
   font-size: 1.2rem;
 }
 
 section h2 {
-  color: #facc15;
-  font-size: 1.8rem;
-  margin-top: 2rem;
+  color: #ff3333;
+  font-size: 1.6rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 a {
-  color: #7dd3fc;
+  color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: #38bdf8;
+  color: #ff3333;
   text-decoration: underline;
 }
 
@@ -49,6 +63,41 @@ ul {
 }
 
 li {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.cert-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cert-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.cert-card img {
+  max-width: 80px;
+  margin-bottom: 0.5rem;
+}
+
+.cert-card h3 {
+  color: #ff3333;
+  margin: 0.5rem 0;
+}
+
+.cert-card p {
+  font-size: 0.9rem;
+  color: #ccc;
 }
