@@ -4,6 +4,33 @@ body {
   background-color: #0f0f0f;
   color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.binary-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    rgba(255, 0, 0, 0.05) 1px,
+    transparent 2px
+  );
+  animation: binaryFlow 10s linear infinite;
+}
+
+@keyframes binaryFlow {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: 100%;
+  }
 }
 
 .container {
@@ -34,9 +61,12 @@ header h1 {
   margin: 0;
 }
 
-header p {
+header p,
+.summary {
   color: #cccccc;
   font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0.5rem auto;
 }
 
 section h2 {
@@ -100,4 +130,16 @@ li {
 .cert-card p {
   font-size: 0.9rem;
   color: #ccc;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.2);
 }
