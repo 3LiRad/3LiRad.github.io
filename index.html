@@ -5,110 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ali Radman | Cybersecurity Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f1115;
-      color: #f1f5f9;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-    }
-
-    .logo-top-right {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      max-width: 120px;
-      border-radius: 10px;
-    }
-
-    header {
-      text-align: center;
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: #38bdf8;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-    }
-
-    section h2 {
-      color: #facc15;
-      font-size: 1.6rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-
-    a {
-      color: #7dd3fc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: #38bdf8;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.8rem;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
-    <!-- Logo -->
     <img src="logo.png" alt="Ali Radman Logo" class="logo-top-right" />
 
-    <!-- Header -->
     <header>
       <h1>Ali Radman</h1>
       <p>Cybersecurity Analyst | eJPT Certified | Offensive Security Enthusiast</p>
     </header>
 
-    <!-- Projects -->
     <section>
       <h2>🚀 Projects</h2>
-      <ul>
-        <li><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank">Simple SSH Honeypot</a> — A Python honeypot that simulates SSH to log attacker activity.</li>
-        <li>HackTheBox Lab Writeups — Private writeups of real-world pentesting simulations.</li>
-        <li>Custom Python Exploits — Scripting and automation for ethical hacking tasks.</li>
+      <ul class="project-list">
+        <li>
+          <strong><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank">Simple SSH Honeypot</a></strong>
+          <p>A Python honeypot that simulates SSH services and captures attacker input for analysis.</p>
+        </li>
+        <li>
+          <strong>HackTheBox Lab Writeups</strong>
+          <p>Private pentesting reports covering web exploitation, enumeration, and privilege escalation.</p>
+        </li>
+        <li>
+          <strong>Custom Python Exploits</strong>
+          <p>Tools for automating reconnaissance and demonstrating vulnerabilities in CTF environments.</p>
+        </li>
       </ul>
     </section>
 
-    <!-- Certifications -->
     <section>
       <h2>🎓 Certifications</h2>
-      <ul>
-        <li>eLearnSecurity Junior Penetration Tester (eJPT)</li>
-        <li>Google Cybersecurity Certificate</li>
-        <li>Harvard CS50 Cybersecurity</li>
-        <li>PNPT — In Progress</li>
-      </ul>
+      <div class="cert-grid">
+        <a href="https://certs.ine.com/73bd0305-ac32-4b8e-a78a-33321aac9002" target="_blank" class="cert-card">
+          <img src="ejpt.png" alt="eJPT Logo">
+          <h3>eJPT</h3>
+          <p>Hands-on penetration testing cert from INE covering network, web, and system exploitation.</p>
+        </a>
+        <a href="https://www.credly.com/badges/971fb3ec-f816-4443-87f3-7c635873bfc1" target="_blank" class="cert-card">
+          <img src="google.png" alt="Google Cybersecurity Certificate">
+          <h3>Google Cybersecurity</h3>
+          <p>Google certificate for analysts covering SIEM, threat modeling, and incident response.</p>
+        </a>
+        <a href="https://courses.edx.org/certificates/24e70eb7162d454fb65de663d7c246db" target="_blank" class="cert-card">
+          <img src="cs50.png" alt="CS50 Cybersecurity">
+          <h3>Harvard CS50 Cybersecurity</h3>
+          <p>Academic cybersecurity foundation course on cryptography, system security, and forensics.</p>
+        </a>
+      </div>
     </section>
 
-    <!-- Contact -->
     <section>
       <h2>📨 Contact</h2>
       <p>Email: <a href="mailto:aliahmnam5@gmail.com">aliahmnam5@gmail.com</a></p>
