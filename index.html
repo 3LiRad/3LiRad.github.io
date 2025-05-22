@@ -5,64 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ali Radman | Cybersecurity Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .icon {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-      margin-right: 8px;
-      transition: transform 0.3s ease-in-out;
-      filter: brightness(200%) invert(1);
-    }
-    .icon:hover {
-      transform: scale(1.2);
-    }
-    .logo-top-center {
-      display: block;
-      margin: 2rem auto 0 auto;
-      max-width: 120px;
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <div class="binary-background"></div>
+  <canvas id="binaryCanvas"></canvas>
   <div class="container">
     <img src="logo.png" alt="Ali Radman Logo" class="logo-top-center" />
 
-    <header>
+    <header class="fade-in">
       <h1>Ali Radman</h1>
       <p>Cybersecurity Analyst | eJPT Certified | Red Team Enthusiast</p>
-      <p class="summary">Focused on offensive security, ethical hacking, and continuous skill development. Preparing for the PNPT and planning to pursue the OSCP certification next.</p>
+      <p class="summary">I'm a passionate cybersecurity analyst focused on offensive security, red teaming, and ethical hacking. I build honeypots, write custom exploits, and study adversarial tactics to deepen my understanding of modern threats. I'm currently preparing for the PNPT and plan to pursue the OSCP certification soon to sharpen my red teaming capabilities and reporting discipline.</p>
     </header>
 
-    <section>
+    <section class="fade-in">
       <h2>🎓 Education</h2>
       <ul>
         <li>Foundation Degree in Information Technology – Asia Pacific University (APU), Malaysia</li>
       </ul>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>🚀 Projects</h2>
       <ul class="project-list">
         <li>
           <strong><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank">Simple SSH Honeypot</a></strong>
-          <p>A Python honeypot that simulates SSH services and captures attacker input for analysis.</p>
+          <p>A lightweight Python-based SSH honeypot that simulates a login prompt, logs attacker credentials and input, and helps visualize how attackers probe systems. Built to reinforce concepts in deception, logging, and detection engineering.</p>
         </li>
         <li>
           <strong>HackTheBox Lab Writeups</strong>
-          <p>Private pentesting reports covering web exploitation, enumeration, and privilege escalation.</p>
+          <p>Private writeups analyzing real-world vulnerable machines. Each lab documents enumeration techniques, attack paths, privilege escalation methods, and exploit strategies across Windows and Linux environments.</p>
         </li>
         <li>
           <strong>Custom Python Exploits</strong>
-          <p>Tools for automating reconnaissance and demonstrating vulnerabilities in CTF environments.</p>
+          <p>Small tools and proof-of-concept scripts written in Python to automate reconnaissance, simulate exploits, and solve CTF-style challenges. Reinforces understanding of buffer overflows, brute-force attacks, and file inclusion vulnerabilities.</p>
         </li>
       </ul>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>🎓 Certifications</h2>
       <div class="cert-grid">
         <a href="https://certs.ine.com/73bd0305-ac32-4b8e-a78a-33321aac9002" target="_blank" class="cert-card">
@@ -83,12 +65,48 @@
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>📨 Contact</h2>
-      <p><img src="https://img.icons8.com/ios-filled/50/ffffff/email.png" class="icon"> Email: <a href="mailto:aliahmnam5@gmail.com">aliahmnam5@gmail.com</a></p>
-      <p><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" class="icon"> LinkedIn: <a href="https://linkedin.com/in/ali-radman-46706430b" target="_blank">ali-radman-46706430b</a></p>
-      <p><img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" class="icon"> GitHub: <a href="https://github.com/3LiRad" target="_blank">github.com/3LiRad</a></p>
+      <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:aliahmnam5@gmail.com">aliahmnam5@gmail.com</a></p>
+      <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://linkedin.com/in/ali-radman-46706430b" target="_blank">ali-radman-46706430b</a></p>
+      <p><i class="fab fa-github icon"></i> GitHub: <a href="https://github.com/3LiRad" target="_blank">github.com/3LiRad</a></p>
     </section>
   </div>
+
+  <script>
+    // Scroll animation
+    const fadeInEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    fadeInEls.forEach(el => observer.observe(el));
+
+    // Binary Canvas background
+    const canvas = document.getElementById("binaryCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const binary = "01";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+    function draw() {
+      ctx.fillStyle = "rgba(15, 15, 15, 0.08)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ff0000";
+      ctx.font = fontSize + "px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = binary[Math.floor(Math.random() * binary.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 50);
+  </script>
 </body>
 </html>
