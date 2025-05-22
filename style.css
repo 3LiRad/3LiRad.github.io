@@ -32,6 +32,16 @@ canvas#binaryCanvas {
   max-width: 120px;
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+  }
 }
 
 header {
@@ -44,6 +54,18 @@ header h1 {
   font-size: 3rem;
   color: #ff0000;
   margin: 0;
+  animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 header p,
@@ -140,4 +162,24 @@ li {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.fade-in.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.project-list img {
+  animation: popFade 0.8s ease-in-out;
+}
+
+@keyframes popFade {
+  0% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
