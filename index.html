@@ -31,14 +31,16 @@
       <ul class="project-list">
         <li>
           <strong><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank">Simple SSH Honeypot</a></strong>
+          <img src="honeypot-preview.png" alt="Honeypot Screenshot" style="max-width: 100%; border-radius: 8px; margin: 10px 0;">
           <p>A lightweight Python-based SSH honeypot that simulates a login prompt, logs attacker credentials and input, and helps visualize how attackers probe systems. Built to reinforce concepts in deception, logging, and detection engineering.</p>
         </li>
         <li>
           <strong>HackTheBox Lab Writeups</strong>
+          <img src="htb-preview.png" alt="HTB Preview" style="max-width: 100%; border-radius: 8px; margin: 10px 0;">
           <p>Private writeups analyzing real-world vulnerable machines. Each lab documents enumeration techniques, attack paths, privilege escalation methods, and exploit strategies across Windows and Linux environments.</p>
         </li>
         <li>
-          <strong>Custom Python Exploits</strong>
+          <strong>Custom Python Exploits <i class="fab fa-python icon"></i></strong>
           <p>Small tools and proof-of-concept scripts written in Python to automate reconnaissance, simulate exploits, and solve CTF-style challenges. Reinforces understanding of buffer overflows, brute-force attacks, and file inclusion vulnerabilities.</p>
         </li>
       </ul>
@@ -74,16 +76,20 @@
   </div>
 
   <script>
-    // Scroll animation
     const fadeInEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.remove('hidden');
+        } else {
+          entry.target.classList.remove('visible');
+          entry.target.classList.add('hidden');
+        }
       });
     }, { threshold: 0.1 });
     fadeInEls.forEach(el => observer.observe(el));
 
-    // Binary Canvas background
     const canvas = document.getElementById("binaryCanvas");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
