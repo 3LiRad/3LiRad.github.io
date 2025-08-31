@@ -98,6 +98,7 @@ li { margin-bottom: 0.8rem; }
   margin-top: 1rem;
 }
 .cert-card {
+  display: block;
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 10px;
@@ -111,8 +112,11 @@ li { margin-bottom: 0.8rem; }
   border-color: #444;
 }
 .cert-card img {
-  max-width: 92px;          /* bumped for PNPT seal clarity */
-  margin-bottom: 0.5rem;
+  display: block;
+  width: 92px;            /* explicit size so it always shows */
+  max-width: 100%;
+  height: auto;
+  margin: 0.25rem auto 0.6rem;
   filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.25));
 }
 .cert-card h3 {
@@ -141,16 +145,10 @@ li { margin-bottom: 0.8rem; }
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.fade-in.hidden {
-  opacity: 0;
-  transform: translateY(30px);
-}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in.hidden { opacity: 0; transform: translateY(30px); }
 
-/* Project visuals */
+/* Projects */
 .project-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 @media (min-width: 820px) { .project-container { grid-template-columns: 1fr 1fr; } }
 
