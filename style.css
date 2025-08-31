@@ -1,3 +1,4 @@
+/* Base */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,16 +9,17 @@ body {
   position: relative;
 }
 
+/* Background canvas */
 canvas#binaryCanvas {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
   background: #0f0f0f;
 }
 
+/* Layout */
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -26,6 +28,7 @@ canvas#binaryCanvas {
   z-index: 2;
 }
 
+/* Logo */
 .logo-top-center {
   display: block;
   margin: 2rem auto 0 auto;
@@ -34,40 +37,27 @@ canvas#binaryCanvas {
   box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
   animation: pulseGlow 2s infinite ease-in-out;
 }
-
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-  }
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); }
+  50% { box-shadow: 0 0 25px rgba(255, 0, 0, 0.7); }
 }
 
+/* Header */
 header {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
-
 header h1 {
   font-size: 3rem;
   color: #ff0000;
   margin: 0;
   animation: slideIn 1.5s ease forwards;
 }
-
 @keyframes slideIn {
-  from {
-    transform: translateY(-40px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  from { transform: translateY(-40px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
 }
-
 header p,
 .summary {
   color: #cccccc;
@@ -76,6 +66,7 @@ header p,
   margin: 0.5rem auto;
 }
 
+/* Sections */
 section h2 {
   color: #ff3333;
   font-size: 1.6rem;
@@ -84,92 +75,85 @@ section h2 {
   margin-bottom: 1rem;
 }
 
+/* Links */
 a {
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.25s ease;
 }
-
 a:hover {
   color: #ff3333;
   text-decoration: underline;
 }
 
-ul {
-  padding-left: 1.2rem;
-}
+/* Lists */
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 0.8rem; }
 
-li {
-  margin-bottom: 0.8rem;
-}
-
+/* Certifications grid */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
 }
-
 .cert-card {
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 10px;
   padding: 1rem;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-
 .cert-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.45);
+  border-color: #444;
 }
-
 .cert-card img {
-  max-width: 80px;
+  max-width: 92px;          /* bumped for PNPT seal clarity */
   margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.25));
 }
-
 .cert-card h3 {
   color: #ff3333;
   margin: 0.5rem 0;
 }
-
 .cert-card p {
   font-size: 0.9rem;
   color: #ccc;
 }
 
+/* Icons */
 .icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
   margin-right: 8px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.25s ease;
   color: #ff3333;
 }
+.icon:hover { transform: scale(1.15); color: #ffffff; }
 
-.icon:hover {
-  transform: scale(1.2);
-  color: #ffffff;
-}
-
+/* Fade-in util */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
 .fade-in.hidden {
   opacity: 0;
   transform: translateY(30px);
 }
 
-.project-list img,
+/* Project visuals */
+.project-container { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 820px) { .project-container { grid-template-columns: 1fr 1fr; } }
+
 .project-container img {
   max-width: 120px;
   float: right;
@@ -177,10 +161,6 @@ li {
   margin-bottom: 10px;
   border-radius: 6px;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.25s ease;
 }
-
-.project-list img:hover,
-.project-container img:hover {
-  transform: scale(1.03);
-}
+.project-container img:hover { transform: scale(1.03); }
