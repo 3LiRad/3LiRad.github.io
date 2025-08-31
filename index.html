@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ali Radman | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Matrix-style binary background -->
   <canvas id="binaryCanvas"></canvas>
+
   <div class="container">
     <img src="logo.png" alt="Ali Radman Logo" class="logo-top-center" />
 
     <header class="fade-in">
       <h1>Ali Radman</h1>
-      <p>Cybersecurity Analyst | eJPT Certified | Red Team Enthusiast</p>
-      <p class="summary">I'm a passionate cybersecurity analyst focused on offensive security, red teaming, and ethical hacking. I build honeypots, write custom exploits, and study adversarial tactics to deepen my understanding of modern threats. I'm currently preparing for the PNPT and plan to pursue the OSCP certification soon to sharpen my red teaming capabilities and reporting discipline.</p>
+      <p>Cybersecurity Analyst | <strong>PNPT</strong> & eJPT Certified | Red Team Enthusiast</p>
+      <p class="summary">
+        I'm a passionate cybersecurity analyst focused on offensive security, red teaming, and ethical hacking.
+        I build honeypots, write custom exploits, and study adversarial tactics to deepen my understanding of modern threats.
+        I’ve earned the PNPT and plan to pursue the OSCP next to sharpen red teaming and reporting.
+      </p>
     </header>
 
     <section class="fade-in">
@@ -30,19 +36,22 @@
       <h2>🚀 Projects</h2>
       <div class="project-container">
         <div class="project fade-in">
-          <h3><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank">Simple SSH Honeypot</a></h3>
-          <img src="honeypot-preview.png" alt="Honeypot Screenshot">
-          <p>This honeypot is a deceptive service that simulates SSH access. It captures login attempts and attacker commands for analysis. It’s useful for understanding adversary behavior, threat intelligence gathering, and reinforcing blue team detection techniques.</p>
+          <h3><a href="https://github.com/3LiRad/Simple-SSH-Honeypot" target="_blank" rel="noopener">Simple SSH Honeypot</a></h3>
+          <img src="honeypot-preview.png" alt="Honeypot Screenshot" />
+          <p>
+            This honeypot is a deceptive service that simulates SSH access. It captures login attempts and attacker commands
+            for analysis. It’s useful for understanding adversary behavior, threat intelligence gathering, and reinforcing
+            blue team detection techniques.
+          </p>
         </div>
+
         <div class="project fade-in">
-          <h3>HackTheBox Lab Writeups</h3>
-          <img src="htb-preview.png" alt="HackTheBox Screenshot">
-          <p>Detailed walk-throughs of vulnerable machines covering enumeration, exploitation, and privilege escalation across a range of scenarios. These labs reflect real-world attack paths and practical TTPs.</p>
-        </div>
-        <div class="project fade-in">
-          <h3>Custom Python Exploits <i class="fab fa-python icon"></i></h3>
-          <img src="python-5.png" alt="Python Script Icon">
-          <p>A collection of Python tools created to automate common offensive techniques, such as brute-force login attacks, custom payloads, and vulnerability exploit chains. These tools show how scripting enhances red team workflows.</p>
+          <h3>Custom Python Exploits <i class="fab fa-python icon" aria-hidden="true"></i></h3>
+          <img src="python-5.png" alt="Python Script Icon" />
+          <p>
+            A collection of Python tools created to automate common offensive techniques, such as brute-force login attacks,
+            custom payloads, and vulnerability exploit chains. These tools show how scripting enhances red team workflows.
+          </p>
         </div>
       </div>
     </section>
@@ -50,18 +59,29 @@
     <section class="fade-in">
       <h2>🎓 Certifications</h2>
       <div class="cert-grid">
-        <a href="https://certs.ine.com/73bd0305-ac32-4b8e-a78a-33321aac9002" target="_blank" class="cert-card">
-          <img src="ejpt.png" alt="eJPT Logo">
+        <!-- PNPT (NEW) -->
+        <a href="https://certified.tcm-sec.com/98259d7c-e322-416a-9963-4185c48585a4"
+           target="_blank" rel="noopener"
+           class="cert-card">
+          <img src="PNPT.png" alt="PNPT — Practical Network Penetration Tester" />
+          <h3>PNPT</h3>
+          <p>Real-world pentesting exam by TCM Security: external → internal pivoting, AD, reporting.</p>
+        </a>
+
+        <a href="https://certs.ine.com/73bd0305-ac32-4b8e-a78a-33321aac9002" target="_blank" rel="noopener" class="cert-card">
+          <img src="ejpt.png" alt="eJPT Logo" />
           <h3>eJPT</h3>
           <p>Hands-on penetration testing cert from INE covering network, web, and system exploitation.</p>
         </a>
-        <a href="https://www.credly.com/badges/971fb3ec-f816-4443-87f3-7c635873bfc1" target="_blank" class="cert-card">
-          <img src="google.png" alt="Google Cybersecurity Certificate">
+
+        <a href="https://www.credly.com/badges/971fb3ec-f816-4443-87f3-7c635873bfc1" target="_blank" rel="noopener" class="cert-card">
+          <img src="google.png" alt="Google Cybersecurity Certificate" />
           <h3>Google Cybersecurity</h3>
           <p>Google certificate for analysts covering SIEM, threat modeling, and incident response.</p>
         </a>
-        <a href="https://courses.edx.org/certificates/24e70eb7162d454fb65de663d7c246db" target="_blank" class="cert-card">
-          <img src="cs50.png" alt="CS50 Cybersecurity">
+
+        <a href="https://courses.edx.org/certificates/24e70eb7162d454fb65de663d7c246db" target="_blank" rel="noopener" class="cert-card">
+          <img src="cs50.png" alt="CS50 Cybersecurity" />
           <h3>Harvard CS50 Cybersecurity</h3>
           <p>Academic cybersecurity foundation course on cryptography, system security, and forensics.</p>
         </a>
@@ -70,13 +90,14 @@
 
     <section class="fade-in">
       <h2>📨 Contact</h2>
-      <p><i class="fas fa-envelope icon"></i> Email: <a href="mailto:aliahmnam5@gmail.com">aliahmnam5@gmail.com</a></p>
-      <p><i class="fab fa-linkedin icon"></i> LinkedIn: <a href="https://linkedin.com/in/ali-radman-46706430b" target="_blank">ali-radman-46706430b</a></p>
-      <p><i class="fab fa-github icon"></i> GitHub: <a href="https://github.com/3LiRad" target="_blank">github.com/3LiRad</a></p>
+      <p><i class="fas fa-envelope icon" aria-hidden="true"></i> Email: <a href="mailto:aliahmnam5@gmail.com">aliahmnam5@gmail.com</a></p>
+      <p><i class="fab fa-linkedin icon" aria-hidden="true"></i> LinkedIn: <a href="https://linkedin.com/in/ali-radman-46706430b" target="_blank" rel="noopener">ali-radman-46706430b</a></p>
+      <p><i class="fab fa-github icon" aria-hidden="true"></i> GitHub: <a href="https://github.com/3LiRad" target="_blank" rel="noopener">github.com/3LiRad</a></p>
     </section>
   </div>
 
   <script>
+    // Fade-in on scroll
     const fadeInEls = document.querySelectorAll('.fade-in');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -91,14 +112,21 @@
     }, { threshold: 0.1 });
     fadeInEls.forEach(el => observer.observe(el));
 
+    // Binary rain background
     const canvas = document.getElementById("binaryCanvas");
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    function sizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    sizeCanvas();
+    window.addEventListener('resize', sizeCanvas);
+
     const binary = "01";
     const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = Array(columns).fill(1);
+
     function draw() {
       ctx.fillStyle = "rgba(15, 15, 15, 0.08)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -107,9 +135,7 @@
       for (let i = 0; i < drops.length; i++) {
         const text = binary[Math.floor(Math.random() * binary.length)];
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
         drops[i]++;
       }
     }
